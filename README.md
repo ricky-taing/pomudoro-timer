@@ -34,3 +34,5 @@ Building my version of Pomodoro timer by adding onto this tutorial provided by A
 
 ## To-Do List, Contributions
 1. Settings - Add HTML element allowing users to change how long a session or break is and set variables in timer object to those values
+2. Allow users to change background color
+3. Allow users to add their own background image
