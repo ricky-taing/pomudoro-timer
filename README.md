@@ -31,3 +31,6 @@ $ git clone https://github.com/Freshman-tech/pomodoro-starter-files.git
 ## The POMUdoro Timer
 
 Building my version of Pomodoro timer by adding onto this tutorial provided by Ayooluwa Isaiah aka Freshman-tech.
+
+## To-Do List, Contributions
+1. Settings - Add HTML element allowing users to change how long a session or break is and set variables in timer object to those values
