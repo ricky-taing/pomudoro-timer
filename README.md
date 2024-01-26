@@ -37,3 +37,7 @@ Building my version of Pomodoro timer by adding onto this tutorial provided by A
 2. Allow users to change background color
 3. Allow users to add their own background image
 4. Write test cases to make sure one timer leads to the next
+5. Build my own HTML page with styling
+6. Change favicon to Pomu-themed icon
+7. Secure app (https)
+8. Package it so users can run app without the code...

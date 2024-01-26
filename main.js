@@ -1,6 +1,6 @@
 const timer = {
-  pomodoro: 1,
-  shortBreak: 1,
+  pomodoro: 0,
+  shortBreak: 2,
   longBreak: 15,
   longBreakInterval: 4,
   sessions: 0
@@ -22,16 +22,30 @@ mainButton.addEventListener('click', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+  if ('Notification' in window) {
+    if (Notification.permission !== 'granted' && Notification.permission !== 'denied') {
+      Notification.requestPermission().then(function(permission) {
+        if (permission === 'granted') {
+          new Notification(
+            'Awesome! You will be notified at the start of each session!'
+          )
+        }
+      })
+    }
+  }
+
   switchMode('pomodoro');
 });
 
 function getRemainingTime(endTime) {
   const currentTime = Date.parse(new Date());
   const difference = endTime - currentTime;
+  console.log('difference= ' + difference);
 
   const total = Number.parseInt(difference / 1000, 10);
   const minutes = Number.parseInt((total / 60) % 60, 10);
   const seconds = Number.parseInt(total % 60, 10);
+  console.log(total, minutes, seconds);
 
   return {
     total,
@@ -41,8 +55,19 @@ function getRemainingTime(endTime) {
 }
 
 function startTimer() {
-  let { total } = timer.remainingTime;
+  let total;
+
+  //Handling case where timer set to less than a minute
+  if (timer.remainingTime.total === 0) {
+    total = timer.remainingTime.seconds;
+  } else {
+    total = timer.remainingTime.total;
+  }
+  // let { total } = timer.remainingTime;
+  
   const endTime = Date.parse(new Date()) + total * 1000;
+  // console.log("timer.remainingTime.total= " + timer.remainingTime.total);
+  // console.log('endTime= ' + endTime);
 
   if (timer.mode === 'pomodoro') timer.sessions++;
 
@@ -68,6 +93,14 @@ function startTimer() {
           break;
         default:
           switchMode('pomodoro');
+      }
+
+      if (Notification.permission === 'granted') {
+        const text =
+          timer.mode === 'pomodoro' ? 'Get back to work!' : 'Take a break!';
+        console.log(text);
+        console.log('Displaying notification!');
+        new Notification(text).onshow = () => console.log('Showing notification');
       }
 
       document.querySelector(`[data-sound="${timer.mode}"]`).play();
@@ -106,7 +139,7 @@ function switchMode(mode) {
   timer.remainingTime = {
     total: timer[mode] * 60,
     minutes: timer[mode],
-    seconds: 0
+    seconds: 30
   };
 
   document
