@@ -89,10 +89,12 @@ function updateClock() {
   const min = document.getElementById('js-minutes');
   const sec = document.getElementById('js-seconds');
   const progress = document.getElementById('js-progress');
-
+  const text = timer.mode === 'pomodoro' ? 'Get back to work!' : 'Take a break!';
+  
   min.textContent = minutes;
   sec.textContent = seconds;
   progress.value = timer[timer.mode] * 60 - timer.remainingTime.total;
+  document.title = `${minutes}:${seconds} - ${text}`;
 }
 
 function switchMode(mode) {
