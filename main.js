@@ -1,16 +1,18 @@
 const timer = {
   pomodoro: 1,
-  shortBreak: 5,
+  shortBreak: 1,
   longBreak: 15,
   longBreakInterval: 4,
   sessions: 0
 };
 const modeButtons = document.querySelector('#js-mode-buttons');
 const mainButton = document.getElementById('js-btn');
+const buttonSound = new Audio('button-sound.mp3');
 let interval;
 
 modeButtons.addEventListener('click', handleMode);
 mainButton.addEventListener('click', () => {
+  buttonSound.play();
   const { action } = mainButton.dataset;
   if (action === 'start') {
     startTimer();
@@ -67,6 +69,8 @@ function startTimer() {
         default:
           switchMode('pomodoro');
       }
+
+      document.querySelector(`[data-sound="${timer.mode}"]`).play();
 
       startTimer();
     }
