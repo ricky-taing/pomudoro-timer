@@ -48,6 +48,12 @@ Priority 3: Stretch Goals
 ## Stretch Goals
 1. Write test cases to make sure one timer leads to the next
 2. Secure app (https)
-3. Package it so users can run app without the code...
-4. Add option to change theme to Lazulight members Elira and Finana
-5. Build my own HTML page with styling
+3. Package so users can run app without the code...
+4. Build my own HTML page with styling
+5. Add functionality for different devices such as phone (Media Queries?)
+
+## Citations
+
+- Original [Pomodoro Timer Tutorial](https://freshman.tech/pomodoro-timer/) provided by Ayooluwa Isaiah aka Freshman-tech
+- Kamiinoodles Art [@KamiiRkgk](https://twitter.com/KamiiRkgk/status/1744357376105308575/photo/1)
+- 玖条イチソ Art [@kujouitiso](https://twitter.com/kujouitiso/status/1748553496004321470)

@@ -20,14 +20,30 @@ html {
 }
 
 :root {
-  --pomodoro: hsl(223, 25%, 40%);
-  --shortBreak: hsl(48, 23%, 40%);
-  --longBreak: hsl(105, 16%, 40%);
+  /* default colors */
+  /* --pomodoro: hsl(223, 25%, 40%); */
+  /* --shortBreak: hsl(48, 23%, 40%); */
+  /* --longBreak: hsl(105, 16%, 40%); */
+
+  /* pomu rainpuff colors */
+  /* --pomodoro: hsl(147, 50%, 47%); */
+  /* --shortBreak: hsl(59, 100%, 75%); */
+  /* --longBreak: hsl(355, 60%, 56%); */
+
+  /* pomu rainpuff images */
+  --pomodoro: url('images/kamiirkgk-pomu.jpeg');
+  --shortBreak: url('images/kujouitiso-pomu.jpeg');
+  --longBreak: url('images/pomu-rainpuff-graduation.webp')
 }
 
 body {
-  background-color: var(--pomodoro);
-  transition: background-color 1s ease;
+  /* background-color: var(--pomodoro); */
+  /* transition: background-color 1s ease; */
+  
+  background-image: var(--pomodoro);
+  background-attachment: fixed;
+  background-size: cover;
+  transition: background-image 1s ease;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   user-select: none;
 }
