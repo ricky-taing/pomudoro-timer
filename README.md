@@ -28,16 +28,26 @@ $ git clone https://github.com/Freshman-tech/pomodoro-starter-files.git
 `cd` into the downloaded directory and follow along with the
 [tutorial](https://freshman.tech/pomodoro-timer/).
 
-## The POMUdoro Timer
+## To-Do List, Contributions
 
+The Pomudoro "Rainpuff" Timer: 
 Building my version of Pomodoro timer by adding onto this tutorial provided by Ayooluwa Isaiah aka Freshman-tech.
 
-## To-Do List, Contributions
-1. Settings - Add HTML element allowing users to change how long a session or break is and set variables in timer object to those values
-2. Allow users to change background color
-3. Allow users to add their own background image
-4. Write test cases to make sure one timer leads to the next
+Priority 1: Pomufication  
+Priority 2: Functionality  
+Priority 3: Stretch Goals  
+
+1. Change background image to Pomu
+2. Change ring, button sounds to Pomu sounds
+3. Change favicon to Pomu-themed icon
+4. Allow users to change how long a session or break is
+5. Add option to change theme to Lazulight members Elira and Finana
+    1. Allow users to change background color, image
+6. Fix Notifications on Google Chrome (works on Firefox)
+
+## Stretch Goals
+1. Write test cases to make sure one timer leads to the next
+2. Secure app (https)
+3. Package it so users can run app without the code...
+4. Add option to change theme to Lazulight members Elira and Finana
 5. Build my own HTML page with styling
-6. Change favicon to Pomu-themed icon
-7. Secure app (https)
-8. Package it so users can run app without the code...

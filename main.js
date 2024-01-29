@@ -1,6 +1,6 @@
 const timer = {
   pomodoro: 0,
-  shortBreak: 2,
+  shortBreak: 0,
   longBreak: 15,
   longBreakInterval: 4,
   sessions: 0
@@ -139,7 +139,7 @@ function switchMode(mode) {
   timer.remainingTime = {
     total: timer[mode] * 60,
     minutes: timer[mode],
-    seconds: 30
+    seconds: 5
   };
 
   document
