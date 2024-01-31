@@ -35,12 +35,12 @@ Priority 3: Stretch Goals
 2. Change ring, button sounds to Pomu sounds
     1. Big PP Energy, OtsuPP, "you're pretty good"
     2. Sound alerts released on Twitter?
-Pomu released notification sound alerts on Twitter 
 3. Change favicon to Pomu-themed icon
 4. Allow users to change how long a session or break is through Settings Menu
 5. Add option to change theme to Lazulight members Elira and Finana
     1. Allow users to change background color, image
 6. Fix Notifications on Google Chrome (works on Firefox)
+7. Add a license. I'm not sure which is appropriate since I started this project off a tutorial. 
 
 ## Stretch Goals
 1. Write test cases to make sure one timer leads to the next
