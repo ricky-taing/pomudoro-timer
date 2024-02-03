@@ -7,7 +7,7 @@ const timer = {
 };
 const modeButtons = document.querySelector('#js-mode-buttons');
 const mainButton = document.getElementById('js-btn');
-const buttonSound = new Audio('button-sound.mp3');
+const buttonSound = new Audio('audio/im-pomu.mp3');
 let interval;
 
 modeButtons.addEventListener('click', handleMode);
