@@ -20,6 +20,12 @@ Clone this repository to your local machine with:
 ```bash
 $ git clone https://github.com/ricky-taing/pomudoro-timer.git
 ```
+Run the following commands to install dependendencies and open app in browser on localhost:
+
+```bash
+$ npm install
+$ npm start
+```
 
 ## Usage
 
@@ -32,20 +38,21 @@ Priority 2: Functionality
 Priority 3: Stretch Goals  
 
 1. ~~Change background image to Pomu~~
-2. Change ring, button sounds to Pomu sounds
-    1. Big PP Energy, OtsuPP, "you're pretty good"
-    2. Sound alerts released on Twitter?
-3. Change favicon to Pomu-themed icon
-4. Allow users to change how long a session or break is through Settings Menu
-5. Add option to change theme to Lazulight members Elira and Finana
-    1. Allow users to change background color, image
-6. Fix Notifications on Google Chrome (works on Firefox)
-7. Add a license. I'm not sure which is appropriate since I started this project off a tutorial. 
+2. ~~Change ring, button sounds to Pomu sounds~~
+    1. Big PP Energy, ~~OtsuPP~~, "you're pretty good"
+3. Implement Settings Menu
+    1. Allow users to change how long a session or break is 
+    2. Allow users to change theme to Lazulight members Elira and Finana or add their own background color, image 
+    3. ~~Button -> New Page~~
+    4. Button -> Pop-up is faster and also takes less resources?
+4. Change favicon to Pomu-themed icon
+5. Fix Notifications on Google Chrome (works on Firefox)
+6. Add a license. I'm not sure which is appropriate since I started this project off a tutorial (looking at you package.json 😬 )
 
 ## Stretch Goals
 1. Write test cases to make sure one timer leads to the next
 2. Secure app (https)
-3. Package so users can run app without the code...
+3. Package so users can run app without the code e.g. send a link and users can use or install...
 4. Build my own HTML page with styling
 5. Add functionality for different devices such as phone (Media Queries?)
 

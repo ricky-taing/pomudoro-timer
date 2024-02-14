@@ -47,6 +47,15 @@
           Start
         </button>
       </div>
+      <!-- <div class="Settings Menu" style="position:fixed; bottom:0; right:0;"> -->
+      <div class="Settings Menu">
+        <form>
+          <label for="minutes">Set timer to...</label><br>
+          <input type="number" id="minutes" name="minutes" min="0" max="59" value="25"> Minutes<br>
+          <input type="number" id="seconds" name="seconds" min="0" max="59" value="0"> Seconds<br>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
     </main>
     <div class="hidden">
       <audio src="audio/pomu-backtowork.m4a" data-sound="pomodoro"></audio>
