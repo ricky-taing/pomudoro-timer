@@ -1,3 +1,5 @@
+//This file contains logic for the timer
+
 const timer = {
   pomodoro: 0,
   shortBreak: 0,
