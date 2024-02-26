@@ -10,6 +10,10 @@ const timer = {
 const modeButtons = document.querySelector('#js-mode-buttons');
 const mainButton = document.getElementById('js-btn');
 const buttonSound = new Audio('audio/im-pomu.mp3');
+const minSlider = document.getElementById('minSlider');
+const secSlider = document.getElementById('secSlider');
+const minDisplay = document.getElementById('minDisplay');
+const secDisplay = document.getElementById('secDisplay');
 let interval;
 
 modeButtons.addEventListener('click', handleMode);
@@ -22,6 +26,15 @@ mainButton.addEventListener('click', () => {
     stopTimer();
   }
 });
+
+minDisplay.innerHTML = 'Minutes: ' + minSlider.value;
+secDisplay.innerHTML = 'Seconds: ' + secSlider.value;
+minSlider.oninput = function() {
+  minDisplay.innerHTML = 'Minutes: ' + this.value;
+}
+secSlider.oninput = function() {
+  secDisplay.innerHTML = 'Seconds: ' + this.value;
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   if ('Notification' in window) {
