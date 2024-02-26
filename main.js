@@ -1,8 +1,8 @@
 //This file contains logic for the timer
 
 const timer = {
-  pomodoro: 0,
-  shortBreak: 0,
+  pomodoro: 25,
+  shortBreak: 5,
   longBreak: 15,
   longBreakInterval: 4,
   sessions: 0
@@ -12,8 +12,8 @@ const mainButton = document.getElementById('js-btn');
 const buttonSound = new Audio('audio/im-pomu.mp3');
 const minSlider = document.getElementById('minSlider');
 const secSlider = document.getElementById('secSlider');
-const minDisplay = document.getElementById('minDisplay');
-const secDisplay = document.getElementById('secDisplay');
+const min = document.getElementById('js-minutes');
+const sec = document.getElementById('js-seconds');
 let interval;
 
 modeButtons.addEventListener('click', handleMode);
@@ -26,15 +26,6 @@ mainButton.addEventListener('click', () => {
     stopTimer();
   }
 });
-
-minDisplay.innerHTML = 'Minutes: ' + minSlider.value;
-secDisplay.innerHTML = 'Seconds: ' + secSlider.value;
-minSlider.oninput = function() {
-  minDisplay.innerHTML = 'Minutes: ' + this.value;
-}
-secSlider.oninput = function() {
-  secDisplay.innerHTML = 'Seconds: ' + this.value;
-}
 
 document.addEventListener('DOMContentLoaded', () => {
   if ('Notification' in window) {
@@ -51,6 +42,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   switchMode('pomodoro');
 });
+
+//display sessions
+//only allow changes to timer while not running
+//encapsulate in a function and call at certain times...?
+min.innerHTML = 'Minutes: ' + minSlider.value;
+sec.innerHTML = 'Seconds: ' + secSlider.value;
+minSlider.oninput = function() {
+  timer.pomodoro = this.value;
+  min.textContent = this.value.padStart(2, '0');;
+}
+secSlider.oninput = function() {
+  timer.remainingTime.seconds = this.value;
+  sec.textContent = this.value.padStart(2, '0');;
+}
 
 function getRemainingTime(endTime) {
   const currentTime = Date.parse(new Date());
@@ -138,8 +143,8 @@ function updateClock() {
   const minutes = `${remainingTime.minutes}`.padStart(2, '0');
   const seconds = `${remainingTime.seconds}`.padStart(2, '0');
   
-  const min = document.getElementById('js-minutes');
-  const sec = document.getElementById('js-seconds');
+  // const min = document.getElementById('js-minutes');
+  // const sec = document.getElementById('js-seconds');
   const progress = document.getElementById('js-progress');
   const text = timer.mode === 'pomodoro' ? 'Get back to work!' : 'Take a break!';
   
@@ -154,7 +159,7 @@ function switchMode(mode) {
   timer.remainingTime = {
     total: timer[mode] * 60,
     minutes: timer[mode],
-    seconds: 5
+    seconds: 0
   };
 
   document
