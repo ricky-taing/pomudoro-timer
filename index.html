@@ -48,16 +48,12 @@
         </button>
       </div>
       <div class="settings" style="position:fixed; bottom:0; right:0;">
-        <!-- <form action="/settings" method="POST">
-          <label for="minutes">Set timer to...</label><br>
-          <input type="number" id="minutes" name="minutes" min="0" max="59" value="25"> Minutes<br>
-          <input type="number" id="seconds" name="seconds" min="0" max="59" value="0"> Seconds<br>
-          <input type="submit" value="Submit">
-        </form> -->
-        <p>Minutes</p>
-        <input type="range" id="minSlider" name="minutes" min="0" max="59" value="25"><br>
-        <p>Seconds</p>
-        <input type="range" id="secSlider" name="seconds" min="0" max="59" value="0"><br>
+        <p>Pomodoro</p>
+        <input data-mode="pomodoro" type="range" id="pomoSlider" name="minutes" min="0" max="59" value="25"><br>
+        <p>Short Break</p>
+        <input data-mode="shortBreak" type="range" id="shortSlider" name="minutes" min="0" max="59" value="5"><br>
+        <p>Long Break</p>
+        <input data-mode="longBreak" type="range" id="longSlider" name="minutes" min="0" max="59" value="15"><br>
       </div>
     </main>
     <div class="hidden">

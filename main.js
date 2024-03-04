@@ -10,8 +10,6 @@ const timer = {
 const modeButtons = document.querySelector('#js-mode-buttons');
 const mainButton = document.getElementById('js-btn');
 const buttonSound = new Audio('audio/im-pomu.mp3');
-const minSlider = document.getElementById('minSlider');
-const secSlider = document.getElementById('secSlider');
 const min = document.getElementById('js-minutes');
 const sec = document.getElementById('js-seconds');
 let interval;
@@ -25,13 +23,11 @@ mainButton.addEventListener('click', () => {
 
     // Prevent changing timer while running
     minSlider.disabled = true;
-    secSlider.disabled = true;
   } else {
     stopTimer();
 
     // Allow changing timer when not running
     minSlider.disabled = false;
-    secSlider.disabled = false;
   }
 });
 
@@ -51,17 +47,40 @@ document.addEventListener('DOMContentLoaded', () => {
   switchMode('pomodoro');
 });
 
-// display sessions
-// encapsulate in a function and call at certain times...?
+// Display sessions
+// Encapsulate in a function and call at certain times...?
+// Timer doesn't actually update until switch modes...
+// Disable slider depending on which mode?
+// 1. One slider, get global mode, changes time for current mode
+//    a. Pro - potentially reduce duplicate code
+//    b. Con - have to switch mode, then change time
+// 2. Three sliders, one for each mode
+//    a. Pro - can change time for each mode from one page
+//    b. Con - potentially duplicate code
+//    c. Can I listen to the set of sliders for an event?
+
+let sliders = document.querySelectorAll('input');
+sliders.forEach(function(s) {
+  s.addEventListener('input', function(event) {
+    const { mode } = event.target.dataset;
+    timer[mode] = this.value;
+    min.textContent = this.value.padStart(2, '0');
+  })
+})
+
 min.innerHTML = 'Minutes: ' + minSlider.value;
-sec.innerHTML = 'Seconds: ' + secSlider.value;
-minSlider.oninput = function() {
-  timer.pomodoro = this.value;
-  min.textContent = this.value.padStart(2, '0');;
-}
-secSlider.oninput = function() {
-  timer.remainingTime.seconds = this.value;
-  sec.textContent = this.value.padStart(2, '0');;
+minSlider.oninput = function(event) {
+  const { mode } = event.target.dataset;
+  timer[mode] = this.value;
+  // timer.pomodoro = this.value;
+  min.textContent = this.value.padStart(2, '0');
+
+  // update timer with new value
+  // timer.remainingTime = {
+    // total: timer.pomodoro * 60,
+    // minutes: timer.pomodoro,
+    // seconds: 0
+  // }
 }
 
 function getRemainingTime(endTime) {
@@ -89,8 +108,8 @@ function startTimer() {
     total = timer.remainingTime.seconds;
   } else {
     total = timer.remainingTime.total;
+    // console.log(`total is ${total}`);
   }
-  // let { total } = timer.remainingTime;
   
   const endTime = Date.parse(new Date()) + total * 1000;
   // console.log("timer.remainingTime.total= " + timer.remainingTime.total);
