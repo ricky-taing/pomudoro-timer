@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 let sliders = document.querySelectorAll('input');
+let sliderDisplay;
 sliders.forEach(function(s) {
   s.addEventListener('input', function(event) {
     const { mode } = event.target.dataset;
@@ -58,7 +59,7 @@ sliders.forEach(function(s) {
       min.textContent = this.value.padStart(2, '0');
     }
 
-    let sliderDisplay = document.querySelector(`p[data-mode='${mode}']`);
+    sliderDisplay = document.querySelector(`p[data-mode='${mode}']`);
     sliderDisplay.textContent = `${mode}: ${this.value}`;
   })
 })

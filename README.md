@@ -37,29 +37,31 @@ Priority 1: Pomufication
 Priority 2: Functionality  
 Priority 3: Stretch Goals  
 
-1. ~~Change background image to Pomu~~
-2. ~~Change ring, button sounds to Pomu sounds~~
+1. Add a license
+    1. I'm not sure which is appropriate since I started this project off a tutorial (looking at you package.json 😬 )
+2. Fix Notifications on Google Chrome (works on Firefox)
+3. ~~Change background image to Pomu~~
+4. ~~Change ring, button sounds to Pomu sounds~~
     1. Big PP Energy, ~~OtsuPP~~, "you're pretty good"
-3. Implement Settings Menu
+5. Implement Settings Menu
     1. Allow users to change how long a session or break is 
-    2. Allow users to change theme to Lazulight members Elira and Finana or add their own background color, image 
+    2. Allow users to change theme to Lazulight members Elira, Finana or add their own background color, image 
     3. ~~Button -> New Page~~
     4. Button -> Pop-up is faster and also takes less resources?
-4. Change favicon to Pomu-themed icon
-5. Fix Notifications on Google Chrome (works on Firefox)
-6. Add a license. I'm not sure which is appropriate since I started this project off a tutorial (looking at you package.json 😬 )
+6. Display and track sessions so I don’t have to keep another tab open
+7. Change favicon to Pomu-themed icon
 
-- Display sessions
-- Encapsulate in a function and call at certain times...?
-- Timer doesn't actually update until switch modes...
-- Disable slider depending on which mode?
+Settings Menu Approaches:
 1. One slider, get global mode, changes time for current mode
-   a. Pro - potentially reduce duplicate code
-   b. Con - have to switch mode, then change time
+   1. Pro - potentially reduce duplicate code
+   2. Con - have to switch mode, then change time
 2. Three sliders, one for each mode
-   a. Pro - can change time for each mode from one page
-   b. ~~Con - potentially duplicate code~~ Can I listen to the set of sliders for an event?
-   c. ~~Con - Moving any slider for any mode changes text for current mode's clock~~
+   1. Pro - can change time for each mode from one page
+   2. ~~Con - potentially duplicate code~~ Can I listen to the set of sliders for an event?
+   3. ~~Con - Moving any slider for any mode changes text for current mode's clock~~
+
+Settings Menu Problems:
+1. Timer doesn't actually update until switch modes...
 
 ## Stretch Goals
 1. Write test cases to make sure one timer leads to the next
