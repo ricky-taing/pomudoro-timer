@@ -1,4 +1,4 @@
-//This file contains logic for the timer
+// This file contains logic for the timer
 
 const timer = {
   pomodoro: 25,
@@ -22,8 +22,16 @@ mainButton.addEventListener('click', () => {
   const { action } = mainButton.dataset;
   if (action === 'start') {
     startTimer();
+
+    // Prevent changing timer while running
+    minSlider.disabled = true;
+    secSlider.disabled = true;
   } else {
     stopTimer();
+
+    // Allow changing timer when not running
+    minSlider.disabled = false;
+    secSlider.disabled = false;
   }
 });
 
@@ -43,9 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
   switchMode('pomodoro');
 });
 
-//display sessions
-//only allow changes to timer while not running
-//encapsulate in a function and call at certain times...?
+// display sessions
+// encapsulate in a function and call at certain times...?
 min.innerHTML = 'Minutes: ' + minSlider.value;
 sec.innerHTML = 'Seconds: ' + secSlider.value;
 minSlider.oninput = function() {
@@ -77,7 +84,7 @@ function getRemainingTime(endTime) {
 function startTimer() {
   let total;
 
-  //Handling case where timer set to less than a minute
+  // Handling case where timer set to less than a minute
   if (timer.remainingTime.total === 0) {
     total = timer.remainingTime.seconds;
   } else {
