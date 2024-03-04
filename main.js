@@ -52,24 +52,13 @@ sliders.forEach(function(s) {
   s.addEventListener('input', function(event) {
     const { mode } = event.target.dataset;
     timer[mode] = this.value;
-    min.textContent = this.value.padStart(2, '0');
+
+    // only if mode of slider clicked matches current mode, update clock text
+    if (mode === timer.mode) {
+      min.textContent = this.value.padStart(2, '0');
+    }
   })
 })
-
-min.innerHTML = 'Minutes: ' + minSlider.value;
-minSlider.oninput = function(event) {
-  const { mode } = event.target.dataset;
-  timer[mode] = this.value;
-  // timer.pomodoro = this.value;
-  min.textContent = this.value.padStart(2, '0');
-
-  // update timer with new value
-  // timer.remainingTime = {
-    // total: timer.pomodoro * 60,
-    // minutes: timer.pomodoro,
-    // seconds: 0
-  // }
-}
 
 function getRemainingTime(endTime) {
   const currentTime = Date.parse(new Date());
