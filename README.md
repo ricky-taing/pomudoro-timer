@@ -59,7 +59,7 @@ Priority 3: Stretch Goals
 2. Three sliders, one for each mode
    a. Pro - can change time for each mode from one page
    b. ~~Con - potentially duplicate code~~ Can I listen to the set of sliders for an event?
-   c. Con - Moving any slider for any mode changes text for current mode's clock
+   c. ~~Con - Moving any slider for any mode changes text for current mode's clock~~
 
 ## Stretch Goals
 1. Write test cases to make sure one timer leads to the next

@@ -53,10 +53,13 @@ sliders.forEach(function(s) {
     const { mode } = event.target.dataset;
     timer[mode] = this.value;
 
-    // only if mode of slider clicked matches current mode, update clock text
+    // Only if mode of slider clicked matches current mode, update clock text
     if (mode === timer.mode) {
       min.textContent = this.value.padStart(2, '0');
     }
+
+    let sliderDisplay = document.querySelector(`p[data-mode='${mode}']`);
+    sliderDisplay.textContent = `${mode}: ${this.value}`;
   })
 })
 
