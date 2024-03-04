@@ -49,6 +49,18 @@ Priority 3: Stretch Goals
 5. Fix Notifications on Google Chrome (works on Firefox)
 6. Add a license. I'm not sure which is appropriate since I started this project off a tutorial (looking at you package.json 😬 )
 
+- Display sessions
+- Encapsulate in a function and call at certain times...?
+- Timer doesn't actually update until switch modes...
+- Disable slider depending on which mode?
+1. One slider, get global mode, changes time for current mode
+   a. Pro - potentially reduce duplicate code
+   b. Con - have to switch mode, then change time
+2. Three sliders, one for each mode
+   a. Pro - can change time for each mode from one page
+   b. ~~Con - potentially duplicate code~~ Can I listen to the set of sliders for an event?
+   c. Con - Moving any slider for any mode changes text for current mode's clock
+
 ## Stretch Goals
 1. Write test cases to make sure one timer leads to the next
 2. Secure app (https)

@@ -47,18 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
   switchMode('pomodoro');
 });
 
-// Display sessions
-// Encapsulate in a function and call at certain times...?
-// Timer doesn't actually update until switch modes...
-// Disable slider depending on which mode?
-// 1. One slider, get global mode, changes time for current mode
-//    a. Pro - potentially reduce duplicate code
-//    b. Con - have to switch mode, then change time
-// 2. Three sliders, one for each mode
-//    a. Pro - can change time for each mode from one page
-//    b. Con - potentially duplicate code
-//    c. Can I listen to the set of sliders for an event?
-
 let sliders = document.querySelectorAll('input');
 sliders.forEach(function(s) {
   s.addEventListener('input', function(event) {
@@ -181,6 +169,7 @@ function updateClock() {
 }
 
 function switchMode(mode) {
+  // sliders[mode].disabled = false;
   timer.mode = mode;
   timer.remainingTime = {
     total: timer[mode] * 60,
