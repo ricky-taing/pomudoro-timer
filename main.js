@@ -13,6 +13,8 @@ const buttonSound = new Audio('audio/im-pomu.mp3');
 const min = document.getElementById('js-minutes');
 const sec = document.getElementById('js-seconds');
 let sessionsDisplay = document.getElementById('sessions');
+let sliders = document.querySelectorAll('input');
+let sliderDisplay;
 let interval;
 
 modeButtons.addEventListener('click', handleMode);
@@ -21,14 +23,18 @@ mainButton.addEventListener('click', () => {
   const { action } = mainButton.dataset;
   if (action === 'start') {
     startTimer();
-
-    // Prevent changing timer while running
-    minSlider.disabled = true;
+  
+    // Disable changing timer while running
+    sliders.forEach(function(s) {
+      s.disabled = true;
+    })
   } else {
     stopTimer();
 
-    // Allow changing timer when not running
-    minSlider.disabled = false;
+    // Enable changing timer when not running
+    sliders.forEach(function(s) {
+      s.disabled = false;
+    })
   }
 });
 
@@ -48,8 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
   switchMode('pomodoro');
 });
 
-let sliders = document.querySelectorAll('input');
-let sliderDisplay;
 sliders.forEach(function(s) {
   s.addEventListener('input', function(event) {
     const { mode } = event.target.dataset;
