@@ -63,11 +63,11 @@ sliders.forEach(function(s) {
     // Only if mode of slider clicked matches current mode, update clock text
     if (mode === timer.mode) {
       min.textContent = this.value.padStart(2, '0');
+      sec.textContent = '00';
     }
 
     sliderDisplay = document.querySelector(`p[data-mode='${mode}']`);
     sliderDisplay.textContent = `${mode}: ${this.value}`;
-    // console.log(`total after change: ${timer.remainingTime.total}`);
   })
 })
 
@@ -92,20 +92,15 @@ function startTimer() {
   let total;
 
   // Handling case where timer set to less than a minute
-  // if (timer.remainingTime.total === 0) {
-  //   total = timer.remainingTime.seconds;
-  // } else {
-  //   total = timer.remainingTime.total;
-  // }
-  total = timer.remainingTime.total;
-  // console.log(`total after start: ${total}`);
+  if (timer.remainingTime.total === 0) {
+    total = timer.remainingTime.seconds;
+  } else {
+    total = timer.remainingTime.total;
+  }
   
   const endTime = Date.parse(new Date()) + total * 1000;
   // console.log("timer.remainingTime.total= " + timer.remainingTime.total);
   // console.log('endTime= ' + endTime);
-
-  if (timer.mode === 'pomodoro') timer.sessions++;
-  sessionsDisplay.textContent = `sessions: ${timer.sessions}`;
 
   mainButton.dataset.action = 'stop';
   mainButton.textContent = 'stop';
@@ -121,6 +116,9 @@ function startTimer() {
 
       switch (timer.mode) {
         case 'pomodoro':
+          timer.sessions++;
+          sessionsDisplay.textContent = `sessions: ${timer.sessions}`;
+
           if (timer.sessions % timer.longBreakInterval === 0) {
             switchMode('longBreak');
           } else {

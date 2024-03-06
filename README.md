@@ -44,12 +44,13 @@ Priority 3: Stretch Goals
 4. ~~Change ring, button sounds to Pomu sounds~~
     1. Big PP Energy, ~~OtsuPP~~, "you're pretty good"
 5. Implement Settings Menu
-    1. Allow users to change how long a session or break is 
+    1. ~~Allow users to change how long a session or break is~~
     2. Allow users to change theme to Lazulight members Elira, Finana or add their own background color, image 
     3. ~~Button -> New Page~~
     4. Button -> Pop-up is faster and also takes less resources?
-6. Display and track sessions so I don’t have to keep another tab open
-7. Change favicon to Pomu-themed icon
+6. ~~Display and track sessions so I don’t have to keep another tab open~~
+7. Add option to change how many work sessions before long break
+8. Change favicon to Pomu-themed icon
 
 Settings Menu Approaches:
 1. One slider, get global mode, changes time for current mode
@@ -62,14 +63,16 @@ Settings Menu Approaches:
 
 Settings Menu Problems:
 1. ~~Timer doesn't actually update until switch modes...~~
-2. Sessions increment whenever hit start/stop button instead of only after session ends
+2. ~~Sessions increment whenever hit start/stop button instead of only after session ends~~
 
 ## Stretch Goals
-1. Write test cases to make sure one timer leads to the next
+1. Write test cases such as verifying one session leads to the next
 2. Secure app (https)
-3. Package so users can run app without the code e.g. send a link and users can use or install...
+3. Package so users can install and run app without the code or send a link
 4. Build my own HTML page with styling
-5. Add functionality for different devices such as phone (Media Queries?)
+5. Add functionality for different platforms such as mobile (Media Queries?)
+6. Add option to count down sessions instead of count up
+7. Add option to change seconds on timer
 
 ## Citations
 
