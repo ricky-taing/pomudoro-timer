@@ -61,7 +61,8 @@ Settings Menu Approaches:
    3. ~~Con - Moving any slider for any mode changes text for current mode's clock~~
 
 Settings Menu Problems:
-1. Timer doesn't actually update until switch modes...
+1. ~~Timer doesn't actually update until switch modes...~~
+2. Sessions increment whenever hit start/stop button instead of only after session ends
 
 ## Stretch Goals
 1. Write test cases to make sure one timer leads to the next

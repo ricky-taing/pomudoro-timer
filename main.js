@@ -58,6 +58,7 @@ sliders.forEach(function(s) {
   s.addEventListener('input', function(event) {
     const { mode } = event.target.dataset;
     timer[mode] = this.value;
+    timer.remainingTime.total= this.value * 60;
 
     // Only if mode of slider clicked matches current mode, update clock text
     if (mode === timer.mode) {
@@ -66,18 +67,19 @@ sliders.forEach(function(s) {
 
     sliderDisplay = document.querySelector(`p[data-mode='${mode}']`);
     sliderDisplay.textContent = `${mode}: ${this.value}`;
+    // console.log(`total after change: ${timer.remainingTime.total}`);
   })
 })
 
 function getRemainingTime(endTime) {
   const currentTime = Date.parse(new Date());
   const difference = endTime - currentTime;
-  console.log('difference= ' + difference);
+  // console.log(`difference= ${difference}`);
 
   const total = Number.parseInt(difference / 1000, 10);
   const minutes = Number.parseInt((total / 60) % 60, 10);
   const seconds = Number.parseInt(total % 60, 10);
-  console.log(total, minutes, seconds);
+  // console.log(total, minutes, seconds);
 
   return {
     total,
@@ -90,12 +92,13 @@ function startTimer() {
   let total;
 
   // Handling case where timer set to less than a minute
-  if (timer.remainingTime.total === 0) {
-    total = timer.remainingTime.seconds;
-  } else {
-    total = timer.remainingTime.total;
-    // console.log(`total is ${total}`);
-  }
+  // if (timer.remainingTime.total === 0) {
+  //   total = timer.remainingTime.seconds;
+  // } else {
+  //   total = timer.remainingTime.total;
+  // }
+  total = timer.remainingTime.total;
+  // console.log(`total after start: ${total}`);
   
   const endTime = Date.parse(new Date()) + total * 1000;
   // console.log("timer.remainingTime.total= " + timer.remainingTime.total);
@@ -168,7 +171,6 @@ function updateClock() {
 }
 
 function switchMode(mode) {
-  // sliders[mode].disabled = false;
   timer.mode = mode;
   timer.remainingTime = {
     total: timer[mode] * 60,
