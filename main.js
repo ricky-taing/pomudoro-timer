@@ -12,6 +12,7 @@ const mainButton = document.getElementById('js-btn');
 const buttonSound = new Audio('audio/im-pomu.mp3');
 const min = document.getElementById('js-minutes');
 const sec = document.getElementById('js-seconds');
+let sessionsDisplay = document.getElementById('sessions');
 let interval;
 
 modeButtons.addEventListener('click', handleMode);
@@ -97,6 +98,7 @@ function startTimer() {
   // console.log('endTime= ' + endTime);
 
   if (timer.mode === 'pomodoro') timer.sessions++;
+  sessionsDisplay.textContent = `sessions: ${timer.sessions}`;
 
   mainButton.dataset.action = 'stop';
   mainButton.textContent = 'stop';
