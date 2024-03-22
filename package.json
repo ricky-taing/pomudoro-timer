@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Freshman-tech/pomodoro#readme",
   "dependencies": {
+    "@google/generative-ai": "^0.2.1",
     "browser-sync": "^2.26.12",
     "express": "^4.18.2"
   }
