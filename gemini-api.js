@@ -5,6 +5,7 @@ require('dotenv').config();
 const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 const modelPro = genAI.getGenerativeModel({ model: 'gemini-pro' });
 const modelProVision = genAI.getGenerativeModel({ model: 'gemini-pro-vision' });
+const modelEmbed = genAI.getGenerativeModel({ model: 'embedding-001' });
 
 function fileToGenerativePart(path, mimeType) {
     return {
@@ -54,6 +55,14 @@ async function textToChat() {
     console.log(text);
 }
 
+async function textToEmbed() {
+    let text = 'The quick brown fox jumped over the lazy dog';
+    let result = await modelEmbed.embedContent(text);
+    let embedding = result.embedding;
+    console.log(embedding);
+}
+
 // textToText();
 // imageToText();
-textToChat();
+// textToChat();
+textToEmbed();
