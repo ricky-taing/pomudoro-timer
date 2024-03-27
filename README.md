@@ -74,6 +74,14 @@ Settings Menu Problems:
 6. Add option to count down sessions instead of count up
 7. Add option to change seconds on timer
 
+## ai-chatbot Branch 3/25/24
+- Keep JS and JSX syntax in separate files
+- Install babel cli to transpile jsx file to js, include in index.html, serve with browser-sync
+- Still getting SyntaxError. Possible solutions are:
+  - Start new react project from scratch
+  - Actually build project with babel, Webpack, Vite
+  - The issue could be Node.js and browser application aren't compatible?
+
 ## Citations
 
 - Original [Pomodoro Timer Tutorial](https://freshman.tech/pomodoro-timer/) provided by Ayooluwa Isaiah aka Freshman-tech
