@@ -65,6 +65,10 @@ Settings Menu Problems:
 1. ~~Timer doesn't actually update until switch modes...~~
 2. ~~Sessions increment whenever hit start/stop button instead of only after session ends~~
 
+Changing Background Image:
+1. Upload file
+2. Pass file into function which modifies css
+
 ## Stretch Goals
 1. Write test cases such as verifying one session leads to the next
 2. Secure app (https)

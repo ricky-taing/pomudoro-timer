@@ -54,6 +54,11 @@
         <p data-mode="longBreak">longBreak: 15</p>
         <input data-mode="longBreak" type="range" id="longSlider" name="minutes" min="0" max="59" value="15"><br>
         <p id="sessions">sessions: 0</p>
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+          Change Background Image:<br>
+          <input type ="file" name="fileToUpload" id="fileToUpload"><br>
+          <input type ="submit" name="submit" value="Submit">
+        </form>
       </div>
     </main>
     <div class="hidden">
