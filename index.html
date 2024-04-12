@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Pomudoro "Rainpuff" Timer</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge; default-src *; script-src 'self' 'unsafe-inline' http://localhost:3000/images/upload.php" />
+    <title>Pomudoro Rainpuff</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" href="#" />
     <!-- Above link used as placeholder to prevent 404 when looking for favicon.ico -->
@@ -54,7 +54,7 @@
         <p data-mode="longBreak">longBreak: 15</p>
         <input data-mode="longBreak" type="range" id="longSlider" name="minutes" min="0" max="59" value="15"><br>
         <p id="sessions">sessions: 0</p>
-        <form action="upload.php" method="post" enctype="multipart/form-data">
+        <form action="./images/upload.php" method="post" enctype="multipart/form-data">
           Change Background Image:<br>
           <input type ="file" name="fileToUpload" id="fileToUpload"><br>
           <input type ="submit" name="submit" value="Submit">
