@@ -26,14 +26,14 @@ html {
   /* --longBreak: hsl(105, 16%, 40%); */
 
   /* pomu rainpuff colors */
-  /* --pomodoro: hsl(147, 50%, 47%); */
-  /* --shortBreak: hsl(59, 100%, 75%); */
-  /* --longBreak: hsl(355, 60%, 56%); */
+  --pomodoro: hsl(147, 50%, 47%);
+  --shortBreak: hsl(59, 100%, 75%);
+  --longBreak: hsl(355, 60%, 56%);
 
   /* pomu rainpuff images */
-  --pomodoro: url('images/kamiirkgk-pomu.jpeg');
+  /* --pomodoro: url('images/kamiirkgk-pomu.jpeg');
   --shortBreak: url('images/kujouitiso-pomu.jpeg');
-  --longBreak: url('images/pomu-rainpuff-graduation.webp')
+  --longBreak: url('images/pomu-rainpuff-graduation.webp') */
 }
 
 body {

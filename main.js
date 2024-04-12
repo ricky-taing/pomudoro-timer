@@ -9,7 +9,8 @@ const timer = {
 };
 const modeButtons = document.querySelector('#js-mode-buttons');
 const mainButton = document.getElementById('js-btn');
-const buttonSound = new Audio('audio/im-pomu.mp3');
+const buttonSound = new Audio('audio/button-sound.mp3');
+// const buttonSound = new Audio('audio/im-pomu.mp3');
 const min = document.getElementById('js-minutes');
 const sec = document.getElementById('js-seconds');
 let sessionsDisplay = document.getElementById('sessions');
@@ -180,8 +181,8 @@ function switchMode(mode) {
     .querySelectorAll('button[data-mode]')
     .forEach(e => e.classList.remove('active'));
   document.querySelector(`[data-mode="${mode}"]`).classList.add('active');
-  // document.body.style.backgroundColor = `var(--${mode})`;
-  document.body.style.backgroundImage = `var(--${mode})`
+  document.body.style.backgroundColor = `var(--${mode})`;
+  // document.body.style.backgroundImage = `var(--${mode})`
   document
     .getElementById('js-progress')
     .setAttribute('max', timer.remainingTime.total);
