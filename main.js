@@ -1,4 +1,4 @@
-// This file contains logic for the timer
+// CLIENT-SIDE, timer logic
 
 const timer = {
   pomodoro: 25,
