@@ -1,8 +1,14 @@
+const cors = require('cors');
 const express = require('express');
 const app = express();
 
 app.use(express.static('./index.html'));
 app.use(express.urlencoded({ extended: false }));
+app.use(cors());
+// app.use((req, res, next) => {
+//     res.setHeader('Access-Control-Allow-Origin', '*'); // Allow access from any origin
+//     next();
+// });
 
 app.get('/testing', (req, res) => {
     res.send('Just testing...');
@@ -20,8 +26,8 @@ app.post('/file-upload', (req, res) => {
     // Move to designated directory
 
     console.log(req.body);
-    res.send('POST request to homepage');
-    res.status(200);
+    res.status(200).send('POST request to homepage');
+    res.status(404).send('Sorry, we cannot find that!')
 });
 
 app.listen(80, () => {

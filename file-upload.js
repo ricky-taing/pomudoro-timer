@@ -14,6 +14,7 @@ function handleSubmit(event) {
   /** @type {Parameters<fetch>[1]} */
   const fetchOptions = {
     method: form.method,
+    // mode: 'cors'
   };
 
   if (form.method.toLowerCase() === 'post') {
@@ -27,6 +28,7 @@ function handleSubmit(event) {
     url.search = searchParams;
   }
 
+  console.log(url);
   fetch(url, fetchOptions);
 
   // stop browser from reloading to submit form
